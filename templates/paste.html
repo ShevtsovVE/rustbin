@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паста #{{ id }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f97316;
+            --secondary: #1e293b;
+            --bg: #f8fafc;
+        }
+        
+        body {
+            background-color: var(--bg);
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1.5rem 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            color: #ea580c;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .paste-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .paste-id {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        
+        .paste-content {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            margin-top: auto;
+            padding: 1rem;
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="logo">Rustbin</a>
+    
+    <div class="container">
+        <div class="paste-header">
+            <div class="paste-id">ID: {{ id }}</div>
+        </div>
+        
+        <div class="paste-content">
+            {{ content }}
+        </div>
+    </div>
+    
+    <div class="footer">
+        Простой Pastebin на Rust
+    </div>
+</body>
+</html>

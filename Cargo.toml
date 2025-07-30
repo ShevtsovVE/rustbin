@@ -1,0 +1,15 @@
+[package]
+name = "rustbin"
+version = "0.1.0"
+edition = "2021"  # Исправляем ошибку Rust 2015 -> 2021
+
+[dependencies]
+actix-web = "4.0"
+tera = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+nanoid = "0.4"
+redis = { version = "0.22", features = ["tokio-comp"] }
+chrono = { version = "0.4", features = ["serde"] }  # Добавляем фичу serde
+tokio = { version = "1.0", features = ["full"] }
+sqlx = { version = "0.7", features = ["sqlite", "runtime-tokio-native-tls", "macros", "chrono"] }
+dotenv = "0.15"  # Для загрузки .env файлов

@@ -1,0 +1,1 @@
+# Rustbin - Pastebin на Rust
