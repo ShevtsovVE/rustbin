@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: rustbin
+    runtime: rust
+    buildCommand: cargo build --release
+    startCommand: ./target/release/rustbin
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:/data/pastes.db
+      - key: REDIS_URL
+        value: redis://redis:6379

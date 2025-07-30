@@ -34,7 +34,7 @@ async fn main() -> std::io::Result<()> {
             .route("/pastes", web::post().to(handlers::create_paste))
             .route("/pastes/{id}", web::get().to(handlers::view_paste))
     })
-    .bind("127.0.0.1:8080")?
+    .bind("0.0.0.0:8080")?
     .run()
     .await
 }
